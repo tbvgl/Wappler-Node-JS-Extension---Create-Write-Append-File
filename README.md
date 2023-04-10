@@ -16,7 +16,7 @@ Create a Server connect flow and search for `Write File`.
 
 ### Path
 
-`./my.json` will create a file called my.json in your project's root directory
+`/my.json` will create a file called my.json in your project's root directory
 
 ### Content
 
@@ -57,7 +57,7 @@ Create a Server connect flow and search for `Read File`.
 
 ### File
 
-Enter the path to the file you want to read. For example, `./my.json` will read the file called my.json in your project's root directory.
+Enter the path to the file you want to read. For example, `my.json` will read the file called my.json in your project's root directory.
 
 ### Encoding
 
