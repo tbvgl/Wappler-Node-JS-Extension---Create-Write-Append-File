@@ -1,6 +1,7 @@
-const fs = require("fs");
+const fs = require('fs/promises');
 const util = require('util');
 const readFile = util.promisify(fs.readFile);
+const path = require('path');
 const { toSystemPath } = require("../../../lib/core/path");
 
 exports.WriteFile = async function(options) {
@@ -22,12 +23,13 @@ exports.WriteFile = async function(options) {
 
 exports.readfile = async function(options) {
     options = this.parse(options);
-    const fileName = String(options.file);
+    const file = toSystemPath(options.file);
 
     try {
-        const fileData = await readFile(fileName, 'utf8');
-        return fileData;
-    } catch (error) {
-        throw new Error(`Error reading file: ${error.message}`);
+        const content = await fs.readFile(file, options.encoding || 'utf8');
+        return content;
+    } catch (err) {
+        console.error(err);
+        throw new Error('Error reading file');
     }
 };
