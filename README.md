@@ -8,8 +8,9 @@ Create a file or write to a file using custom encoding and custom flags.
     1. Go to your Wappler project root directory
     2. Clone the content of the modules folder to `/extensions/server_connect/modules`
     3. Restart Wappler
-    
-## Usage
+
+## Writing File Content 
+### Usage
 
 Create a Server connect flow and search for `Write File`.
 
@@ -46,3 +47,19 @@ Options:
 |a+|	Open file for reading and appending. The file is created if it does not exist.|
 |ax+|	Like 'a+' but fails if the the path exists.|
 
+## Reading File Content
+
+Read the content of a file with custom encoding.
+
+### Usage
+
+Create a Server connect flow and search for `Read File`.
+
+### File
+
+Enter the path to the file you want to read. For example, `./my.json` will read the file called my.json in your project's root directory.
+
+### Encoding
+
+Default: `utf8`
+Options: `utf8`, `ascii`, `binary`, `hex`, `base64` and `utf16le`

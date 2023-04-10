@@ -1,0 +1,105 @@
+[
+  {
+    "type": "WriteFile",
+    "module": "ReadWriteFile",
+    "action": "WriteFile",
+    "groupTitle": "File Management",
+    "groupIcon": "fas fa-lg fa-file comp-files",
+    "title": "Write File",
+    "icon": "fad fa-lg fa-file comp-files",
+    "dataScheme": [],
+    "dataPick": true,
+    "dataPickObject": true,
+    "properties": [
+      {
+        "group": "Write File Properties",
+        "variables": [
+          {
+            "name": "path",
+            "optionName": "path",
+            "title": "Root Path & File Name",
+            "type": "text",
+            "defaultValue": "'./my.json'",
+            "serverDataBindings": true,
+            "required": true
+          },
+          {
+            "name": "content",
+            "optionName": "content",
+            "title": "Content",
+            "type": "text",
+            "serverDataBindings": true,
+            "defaultValue": ""
+          },
+          {
+            "name": "encoding",
+            "optionName": "encoding",
+            "title": "Encoding",
+            "type": "text",
+            "serverDataBindings": true,
+            "defaultValue": "utf8"
+          },
+          {
+            "name": "flag",
+            "optionName": "flag",
+            "title": "Flag",
+            "type": "text",
+            "serverDataBindings": true,
+            "defaultValue": "a"
+          },
+          {
+            "name": "output",
+            "optionName": "output",
+            "title": "Output",
+            "type": "boolean",
+            "defaultValue": false
+          }
+        ]
+      }
+    ]
+  },
+ {
+    type: 'readfile',
+    module: 'ReadWriteFile',
+    action: 'readfile',
+    groupTitle: 'Custom Actions',
+    groupIcon: 'fas fa-lg fa-file comp-data',
+    title: 'Read From File @@var(actionName)@@',
+    icon: 'fas fa-lg fa-random comp-data',
+    dataScheme: [
+      { name: 'Value', type: 'text' }
+    ],
+    dataPickObject: true,
+    properties: [
+      {
+        group: 'Properties',
+        variables: [
+          {
+            name: 'actionName',
+            optionName: 'name',
+            title: 'Name',
+            type: 'text',
+            required: true,
+            defaultValue: ''
+          },
+          {
+            name: 'file',
+            optionName: 'file',
+            title: 'File Name',
+            type: 'file',
+            required: true,
+            serverDataBindings: true,
+            defaultValue: ''
+          },
+          {
+            name: 'actionOutput',
+            optionName: 'output',
+            title: 'Output',
+            type: 'boolean',
+            defaultValue: false
+          }
+        ]
+      }
+    ]
+}
+]
