@@ -1,4 +1,4 @@
-# Wappler NodeJS Extension - Create/Write/Append Files
+# Wappler NodeJS Extension - Create/Write/Read/Append Files
 
 Create a file or write to a file using custom encoding and custom flags.
 
